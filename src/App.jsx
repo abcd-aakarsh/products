@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
             <Route index element={<Navigate replace to="home" />} />
             <Route path="home" element={<HomePage />} />
             <Route path="products" element={<ProductsPage />} />
+            <Route path="products/:id" element={<ProductDetailsPage />} />
           </Route>
 
           <Route path="*" element={<PageNotFound />} />

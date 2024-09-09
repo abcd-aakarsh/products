@@ -1,13 +1,13 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import AppLayout from "./ui/AppLayout";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
-import PageNotFound from "./pages/PageNotFound";
-import AppLayout from "./ui/AppLayout";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
+import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="home" />} />
@@ -18,7 +18,7 @@ const App = () => {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
